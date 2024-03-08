@@ -13,12 +13,7 @@ fun main(){
 }
 
 fun operation(a:Int, b:Int):Any{
-    println("Press\n " +
-            "+ for addition\n " +
-            "/ for division\n " +
-            "- for subtraction\n " +
-            "* for multiplication " +
-            ": ")
+    println("Press\n '+' for addition\n '/' for division\n '-' for subtraction\n  '*' for multiplication : ")
 
     val reb = Scanner(System.`in`)
     val op = reb.nextLine()
