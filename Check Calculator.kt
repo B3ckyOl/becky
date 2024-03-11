@@ -3,19 +3,18 @@ var scanner = Scanner(System.`in`)
 var reb = Scanner(System.`in`)
 fun main() {
     print("enter first number: ")
-    val a = scanner.nextInt()
-    rebCheck(a)
+    var a = scanner.nextInt()
+    a = intCheck(a)
 
     print("enter second number: ")
-    val b = scanner.nextInt()
-    rebCheck(b)
+    var b = scanner.nextInt()
+    b = intCheck(b) 
 
     print("enter arithmetic: ")
     val c = reb.nextLine()
     val arithmetic = rebCheck(c)
 
-
-
+    
     print("Answer: ")
     when{
         ( arithmetic == "+") -> {println(a + b)}
@@ -26,16 +25,7 @@ fun main() {
     }
 }
 
-fun rebCheck(x:Any):Any {
-    if (x is Int) {
-        var integer = x .toInt()
-        while (integer < 0) {
-            print("Must be a positive number, enter again: ")
-            integer = scanner.nextInt()
-        }
-        return integer
-    }
-    else {
+fun rebCheck(x:String):String{
         var r = x
         while (r != "+" && r != "-" && r != "/" && r != "*")
         {
@@ -43,6 +33,13 @@ fun rebCheck(x:Any):Any {
             r = reb.nextLine()
         }
         return r
-    }
 }
 
+fun intCheck(x:Int):Int{
+        var integer = x
+        while (integer < 0) {
+            print("Must be a positive number, enter again: ")
+            integer = scanner.nextInt()
+        }
+        return integer
+}
